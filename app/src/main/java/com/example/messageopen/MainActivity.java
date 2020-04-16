@@ -14,18 +14,27 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 
 public class MainActivity extends AppCompatActivity {
-        private static String TAG="MainActivity";
+
+
+    private static String TAG="MainActivity";
         public static final String TYPE_INTENT = "type";
         public static final String URL_INTENT = "url";
         public static final String NAME_INTENT = "name";
         public static final String ACTIVITY_INTENT = "activity";
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(TAG,"onResume");
+    }
 
         @Override
         protected void onCreate(@Nullable Bundle savedInstanceState)
         {
+
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
+            Log.d(TAG,"onCreate");
 //如果是從網址開啟的
             Intent intent = getIntent();
             if (intent.getData() != null)
@@ -81,4 +90,6 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         }
+
+
     }

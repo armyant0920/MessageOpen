@@ -26,27 +26,39 @@ public class Main2Activity extends AppCompatActivity {
 
     private void init(){
         TextView TV=findViewById(R.id.TV);
-        TV.setOnClickListener(listener);
+
+
         bundle=getIntent().getExtras();
-        type=bundle.getString(MainActivity.TYPE_INTENT);
-        url=bundle.getString(MainActivity.URL_INTENT);
-        name=bundle.getString(MainActivity.NAME_INTENT);
-        TV.setText(type+"\n"+url+"\n"+name);
+        if(bundle!=null) {
+            type = bundle.getString(MainActivity.TYPE_INTENT);
+            url = bundle.getString(MainActivity.URL_INTENT);
+            name = bundle.getString(MainActivity.NAME_INTENT);
+            TV.setText(type + "\n" + url + "\n" + name);
 
-        if(type.equals("red")){
-            TV.setBackgroundColor(Color.RED);
-        }else if(type.equals("yellow")){
-            TV.setBackgroundColor(Color.YELLOW);
-        }else if(type.equals("green")){
-            TV.setBackgroundColor(Color.GREEN);
-        }
-        if(!TextUtils.isEmpty(url)){
-            uri= Uri.parse(url);
-            Log.d(TAG,uri.toString()+"/////"+url);
-        }else{
-            uri = Uri.parse("http://google.com");
+            if (type.equals("red")) {
+                TV.setBackgroundColor(Color.RED);
+
+            } else if (type.equals("yellow")) {
+                TV.setBackgroundColor(Color.YELLOW);
+            } else if (type.equals("green")) {
+                TV.setBackgroundColor(Color.GREEN);
+            }
+            TV.setText(type + "\n" + "按下跳到"+url);
+            if (!TextUtils.isEmpty(url)) {
+                uri = Uri.parse(url);
+                Log.d(TAG, uri.toString() + "/////" + url);
+            } else {
+                uri = Uri.parse("http://google.com");
+            }
+            TV.setOnClickListener(listener);
         }
 
+
+
+    }
+    public void jump(View view){
+        Intent it=new Intent(this,NotificationActivity.class);
+        startActivity(it);
 
     }
 

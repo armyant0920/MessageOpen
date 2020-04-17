@@ -57,6 +57,7 @@ public class NotificationActivity extends AppCompatActivity {
 
 
     }
+
     @RequiresApi(Build.VERSION_CODES.O)//
     private void createNotificationChannel(String channelId, String channelName, int importance) {
         //創建通知渠道
@@ -208,9 +209,7 @@ public class NotificationActivity extends AppCompatActivity {
                 .setContentIntent(adsIntent)
                 .setColor(Color.RED)//這個color好像是給訊息文字用的
 
-                .setDefaults(Notification.DEFAULT_LIGHTS)
-
-                .setLights(Color.RED,1000,1000)
+                .setLights(Color.GREEN,1000,1000)
 
                 .setSound(uri)
                 .build();

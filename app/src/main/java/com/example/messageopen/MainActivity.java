@@ -62,23 +62,23 @@ public class MainActivity extends AppCompatActivity {
                 }
 //獲取到的引數跳轉
                 Intent IntentStart=new Intent();
-
-                if(!TextUtils.isEmpty(activity)){
-                    if(activity.equals("Test1")){
-                        IntentStart.setClass(this,Test1Activity.class);
-                    }else if(activity.equals("Test2")){
-                        IntentStart.setClass(this,Test2Activity.class);
-                    }else if(activity.equals("Test3")){
-                        IntentStart.setClass(this,Test3Activity.class);
-
-                    }else{
-                        IntentStart.setClass(this,Main2Activity.class);
-
-                    }
-                    
-                }else{
-                    IntentStart.setClass(this,Main2Activity.class);
-                }
+                IntentStart.setClass(this,Main2Activity.class);
+//                if(!TextUtils.isEmpty(activity)){
+//                    if(activity.equals("Test1")){
+//                        IntentStart.setClass(this,Test1Activity.class);
+//                    }else if(activity.equals("Test2")){
+//                        IntentStart.setClass(this,Test2Activity.class);
+//                    }else if(activity.equals("Test3")){
+//                        IntentStart.setClass(this,Test3Activity.class);
+//
+//                    }else{
+//                        IntentStart.setClass(this,Main2Activity.class);
+//
+//                    }
+//
+//                }else{
+//                    IntentStart.setClass(this,Main2Activity.class);
+//                }
 
                 Log.d(TAG,IntentStart.getClass().toString());
                // Intent intentStart = new Intent(this,Main2Activity.class);

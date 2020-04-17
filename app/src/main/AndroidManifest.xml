@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.messageopen">
+
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
@@ -10,12 +11,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".NotificationActivity">.
+        <activity android:name=".ClipBoardActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity android:name=".NotificationActivity">
+
         </activity>
         <activity android:name=".Test3Activity">
             <intent-filter>
@@ -41,18 +47,20 @@
 
             <!-- 不可以把上面，桌面啟動圖示的intent-filter，跟下面簡訊開啟App的intent-filter寫一起，否者沒有桌面圖示 -->
             <!-- 在啟動的activity加入以下程式碼，其中scheme很重要，簡訊啟動App的標識吧 -->
+
+        </activity>
+        <activity android:name=".Main2Activity">
+
+        </activity>
+        <activity android:name=".MainActivity">
             <intent-filter>
-                <data android:scheme="msg1" />
+                <data android:scheme="test" />
 
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
-        </activity>
-        <activity android:name=".Main2Activity" />
-        <activity android:name=".MainActivity">
-
         </activity>
     </application>
 

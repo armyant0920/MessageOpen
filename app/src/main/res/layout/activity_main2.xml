@@ -4,13 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Main2Activity">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="jump"
+        android:text="跳到發信息" />
 
     <TextView
         android:id="@+id/TV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F44336"
-        android:text="TextView"
+        android:gravity="center"
+        android:text="這是沒輸入的情況,不跳網址"
         android:textSize="36sp" />
+
 </LinearLayout>
